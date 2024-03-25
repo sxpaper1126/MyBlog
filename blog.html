@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sungbin's Blog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script>
+         $(document).ready(function () {
+            $('.btn').hover(function () {
+            $(this).addClass('reverse'); //마우스 포인터가 올라가 있을때 reverse class 추가
+        }, function () {
+            $(this).removeClass('reverse'); // 마우스 포인터가 올라가 있지 않을 때 reverse class 제거 
+        });
+    });
+    </script>
+    <script>
+        let moveToTop = function () {
+            document.body.scrollIntoView({ behavior: "smooth" });
+        };
+    </script>
+    <style>
+        html,
+        body {
+            padding: 0;
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        .header {
+            width: 100%;
+            height: 15%;
+            background: white;
+        }
+
+        .nav {
+            width: 20%;
+            height: 70%;
+            float: left;
+            background: white;
+
+        }
+
+        .section {
+            width: 60%;
+            height: 600%;
+            float: left;
+        }
+
+        .aside {
+            width: 20%;
+            height: 70%;
+            float: right;
+            background: white;
+        }
+
+        .footer {
+            width: 100%;
+            height: 15%;
+            clear: both;
+            background: rgb(238, 238, 238);
+            text-align: center;
+            position: relative;
+        }
+    </style>
+    <style>
+        ul {
+            text-align: center;
+            list-style-type: none;
+        }
+
+        ul li {
+            display: inline-block;
+            margin-right: 30px;
+
+        }
+
+        li a {
+            color: #6A75CA;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+        }
+
+        li a:hover {
+            background-color: #99a2e9;
+            border-radius: 5px;
+            padding: 5px;
+            color: #2d3b9f;
+        }
+
+        button {
+            position: fixed;
+            bottom: 100px;
+            right: 10px;
+            border-style: none;
+        }
+
+        p a {
+            text-decoration: none;
+            text-align: center;
+            background-color: #99a2e9;
+            width: 100px;
+            color: #1829ab;
+            border-radius: 5px;
+            padding: 3px;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #major {
+            padding: 15px;
+            text-align: left;
+        }
+
+        #Learned {
+            height: 300vh;
+            background: #e4eaf6;
+        }
+
+        #Used {
+            height: 100vh;
+            background: #e4eaf6;
+        }
+
+        #Skills,
+        #Interest
+        {
+            height: 100vh;
+            background-color: #b9bee7;
+        }
+
+        table {
+            margin: 35px;
+        }
+
+        #list {
+            position: fixed;
+        }
+
+        #tb {
+            text-align: center;
+            margin: 70px;
+            margin-top: 100px;
+        }
+        .reverse {  /*reverse class는 불투명도를 0.5로 낮춘다.*/
+        opacity: 0.5;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <a href="home.html"><img src="image/home.png" width="30" height="30" alt="home"></a>
+        <nav>
+            <ul>
+                <li><a href="project.html">Home/Project</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="nav">
+        <details id="list">
+            <summary>Tag List</summary>
+            <p class="btn"><a href="#Skills">Skills</a></p>
+            <p class="btn"><a href="#Learned">Learned</a></p>
+            <p class="btn"><a href="#Interest">Interest</a></p>
+            <p class="btn"><a href="#Used">Used At Least Once</a></p>
+        </details>
+    </nav>
+
+    <section class="section">
+        <article id="Skills">
+            <h2>Skills</h2>
+            <table>
+                <caption><STRONG>MOST USED</STRONG></caption>
+                <tr>
+                    <td><img src="image/language/python.png" width="100px" height="30px" alt="python"></td>
+                    <td> &nbsp;&nbsp;&nbsp;<meter value="0.9" max="1.0"></meter></td>
+                </tr>
+                <tr>
+                    <td><img src="image/language/c.png" width="100px" height="30px" alt="python"></td>
+                    <td> &nbsp;&nbsp;&nbsp;<meter value="0.55" max="1.0"></meter></td>
+                </tr>
+                <tr>
+                    <td><img src="image/language/java.png" width="100px" height="30px" alt="python"></td>
+                    <td> &nbsp;&nbsp;&nbsp;<meter value="0.7" max="1.0"></meter></td>
+                </tr>
+            </table>
+        </article>
+
+        <article id="Learned">
+            <h2>Learned</h2>
+            <div id="major">
+                <p id="major_1"><b>SW실전영어</b> &nbsp;&nbsp;<meter value="0.8" max="1.0">80%</meter><br>
+                    <span>
+                        -SW/IT 관련 전문서적, 논문, 신문기사, 온라인 미디어 등 영어로 전달되는 전공 지식/정보를 이해하는 기술을 배웠다.<br>
+                        -해외 기업과의 협업 시 필요한 영어 의사소통 및 정보전달 기술을 배웠다.
+                    </span>
+                </p>
+                <p id="major_2"><b>자바프로그래밍</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        - 프로그램을 개발 하는 절차와 방법을 이해할 수 있다.<br>
+                        - 객체지향의 개념과 객체지향 프로그램의 구조와 특징을 이해할 수 있다.<br>
+                        - 실습과 과제를 통해 문제 해결 능력을 향상시켰다.
+                    </span>
+                </p>
+                <p id="major_3"><b>컴퓨팅사고와 문제해결</b>&nbsp;&nbsp;<meter value="0.9" max="1.0">90%</meter><br>
+                    <span>
+                        - 컴퓨팅 사고와 문제해결 방법의 필요성을 이해했다.<br>
+                        - 논리적 문제 해결을 위한 파이썬 프로그래밍 실습을 진행했다.<br>
+                    </span>
+                </p>
+                <p id="major_4"><b>창의코딩앱</b>&nbsp;&nbsp;<meter value="0.75" max="1.0">75%</meter><br>
+                    <span>
+                        - JAVASCRIPT 문법구조를 이해함.<br>
+                        - 웹을 다양한 이벤트로 구현가능함.<br>
+                    </span>
+                </p>
+                <p id="major_5"><b>데이터로보는세상</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        - 파이썬 프로그램의 기초 문법을 이해함.<br>
+                        - 다차원 데이터에 대한 효과적인 처리 방법 및 정량적 데이터 표현 방법을 배웠음.<br>
+                    </span>
+                </p>
+                <p id="major_6"><b>자료구조와 알고리즘</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        -스택, 큐, 트리, 힙, 그래프의 지식 및 구현 능력을 배웠음.
+                    </span>
+                </p>
+                <p id="major_7"><b>논리설계와 컴퓨터구조</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        -컴퓨터 시스템을 이루고 있는 CPU,I/O DEVICE 등 다양한 장치간의 연관성을 이해함.<br>
+                        -logicworks를 이용해서 논리회로를 설계해서 시계나 신호등을 제작함.
+                    </span>
+                </p>
+                <p id="major_8"><b>파이썬과학기초프로그래밍</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        -jupyter를 이용해서 python언어로 과학/공학 시뮬레이션에 데이터 구조와 함수 사용법을 익힘.
+                    </span>
+                </p>
+                <p id="major_9"><b>웹프로그래밍</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        -HTML,CSS,JavaScript의 기본적인 기술을 적용할수있고 설계하는법을 배움.
+                    </span>
+                </p>
+                <p id="major_10"><b>선형대수학</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        -선형방정식, 벡터, 행렬 등을 이용한 해석 방법의 기본 원리와 차이점 등을 배움.
+                    </span>
+                </p>
+                <h2>Non-majors</h2>
+                <p><b>디지털 그래픽활용</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        -Adobe Photoshop 2022를 이용해서 기본적인 방법과 포스터 등 자유로운 이미지 제작을 할수있음.
+                    </span>
+                </p>
+                <p><b>수학적 논리를 통한 전략적사고</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        -대기업 취업문제로 사용되는 문제들을 풀어보면서 창의력을 기름.
+                </p>
+                <p><b>스포츠와 인성함양</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        -스포츠와 인성에 관련해서 봉사 등 실천을 하면서 다양한 부분에서 인성실천을 했음.
+                </p>
+                <p><b>생활속의 통계학</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        -생활 속에 자주 등장하는 통계에 대해 분석하고 토의하는 법을 배움.
+                </p>
+                <p><b>중국어1</b>&nbsp;&nbsp;<meter value="1.0" max="1.0">100%</meter><br>
+                    <span>
+                        -기본적인 인사 등 중국어를 배워서 실전에 쓸 수있는 능력을 기름.
+                </p>
+            </div>
+        </article>
+        <article id="Interest">
+            <h2>관심분야</h2>
+            <table border="1" >
+                <tr><td><img src="image/인공지능.png" width="200" height="150"></td><td><img src="image/머신러닝.png" width="200" height="150"></td><td><img src="image/빅데이터.png" width="200" height="150"></td></tr>
+                <tr><td>인공지능 기술을 이용한 자동차 제작</td><td>머신러닝을 이용한 금융</td><td>빅데이터를 이용한 스포츠 분석</td></tr>
+            </table>
+        </article>
+        <article id="Used">
+            <h2>Used More Than Once</h2>
+            <table id="tb">
+                <tr>
+                    <td colspan="3"><img src="image/language/eclipse.png" width="200"
+                            height="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="image/language/visual studio.png" width="200" height="70">
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;<img src="image/language/html css js.png" width="200" height="70">&nbsp;&nbsp;</td>
+                    <td>&nbsp;&nbsp;<img src="image/language/jupyter.png" width="200" height="70">&nbsp;&nbsp;</td>
+                    <td>&nbsp;&nbsp;<img src="image/language/logicworks.png" width="200" height="70">&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3"><img src="image/language/mysql.png" width="200"
+                            height="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="image/language/spyder.png" width="200" height="70">
+                    </td>
+                </tr>
+            </table>
+        </article>
+        
+    </section>
+
+    <aside class="aside">
+        <button><img src="image/top.png" width="30px" height="30px" alt="위로가는버튼" onclick="moveToTop()"></button>
+    </aside>
+
+    <footer class="footer">
+        <span id="email">sx0a0er12345@gmail.com</span>
+    </footer>
+</body>
+
+</html>

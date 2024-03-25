@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <title>Sungbin's Blog</title>
+    <script>
+        let moveToTop = function () {
+            document.body.scrollIntoView({ behavior: "smooth" });
+        };
+    </script>
+    <script> //hobby 버튼 안에 script
+        var hobby = ["image/hobby/야구.png",
+            "image/hobby/음식.jpg",
+            "image/hobby/게임.png",
+            "image/hobby/노래방.png",
+            "image/travel/travel5.jpg",
+            "image/hobby/비트코인.png"];
+        var subtitle = ["스포츠 관람<br> 야구, 축구, E-Sports 경기장에 직접과서 관람하는 것을 좋아한다. ",
+            "맛집 찾아다니기<br> 인터넷 블로그나 지인 추천 등으로 알게된 맛집에 가는 것을 좋아한다.",
+            "게임하기<br> LeagueOfLegends나 Fifa Online등 게임을 좋아한다.",
+            "노래 부르기<br> 스트레스를 받을 때 노래방에서 노래부르는것을 좋아한다. ",
+            "여행다니기<br> 친구 가족 혹은 혼자서 배낭여행을 다니면서 배경사진 찍는 것을 좋아한다.",
+            "비트코인 및 주식 재테크<br> 재테크에 관심이 많아서 방송이나 유튜브를 보고 실제로 투자중이다."];
+        var imgs2 = new Array();
+        for (var i = 0; i < hobby.length; i++) {
+            imgs2[i] = new Image();
+            imgs2[i].src = hobby[i];
+        }
+        var next2 = 0;
+        function changeFront2() {
+            next2++; // 다음 이미지
+            document.getElementById("img2").src = imgs2[next2 % hobby.length].src; // 이미지 변경
+            document.getElementById("text").innerHTML = subtitle[next2 % hobby.length];
+        }
+        function changeBack2() {
+            next2--; // 전 이미지
+            if (next2 == -1) {
+                next2 = 5;
+            }
+            document.getElementById("img2").src = imgs2[next2 % hobby.length].src; // 이미지 변경  
+            document.getElementById("text").innerHTML = subtitle[next2 % hobby.length];
+        }
+    </script>
+    <script> // About.html 사진 변경 script
+        var files = ["image/travel/travel1.jpg",
+            "image/travel/travel2.jpg",
+            "image/travel/travel3.jpg",
+            "image/travel/travel4.jpg",
+            "image/travel/travel5.jpg",
+            "image/travel/travel6.jpg",
+            "image/travel/travel7.jpg",
+            "image/travel/travel8.jpg",
+            "image/travel/travel9.jpg"];
+
+        var imgs = new Array();
+        for (var i = 0; i < files.length; i++) {
+            imgs[i] = new Image();
+            imgs[i].src = files[i];
+        }
+        var next = 0;
+        function changeFront() {
+            next++; // 다음 이미지
+            document.getElementById("img").src = imgs[next % files.length].src; // 이미지 변경
+        }
+        function changeBack() {
+            next--; // 전 이미지
+            if (next == -1) {
+                next = 8;
+            }
+            document.getElementById("img").src = imgs[next % files.length].src; // 이미지 변경  
+        }
+    </script>
+    <!-- 전체 스타일 -->
+    <style>
+        html,
+        body {
+            margin: 30;
+            padding: 0;
+            height: 100%;
+        }
+
+        .header {
+            width: 100%;
+            height: 15%;
+            background: white;
+        }
+
+        .nav {
+            width: 10%;
+            height: 70%;
+            float: left;
+            background: white;
+        }
+
+        .section {
+            width: 80%;
+            height: 130%;
+            float: left;
+            background: #e4eaf6;
+            overflow: auto;
+        }
+
+        .aside {
+            width: 10%;
+            height: 70%;
+            float: right;
+            background: white;
+        }
+
+        .footer {
+            width: 100%;
+            height: 10%;
+            clear: both;
+            background: rgb(222, 222, 222);
+            text-align: center;
+            position: relative;
+        }
+    </style>
+    <!-- 각각 스타일 -->
+    <style>
+        ul {
+            text-align: center;
+            list-style-type: none;
+        }
+
+        ul li {
+            display: inline-block;
+            margin-right: 30px;
+
+        }
+
+        li a {
+            color: #6A75CA;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+        }
+
+        li a:hover {
+            background-color: #99a2e9;
+            border-radius: 5px;
+            padding: 5px;
+            color: #2d3b9f;
+        }
+
+        button {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            border-style: none;
+            background-color: white;
+        }
+
+        #privacy {
+            color: #99a2e9;
+        }
+
+        table {
+            margin-left: 200px;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        #left,
+        #left2 {
+            float: left;
+        }
+
+        #right,
+        #right2 {
+            float: right;
+        }
+
+        #HobbyTable {
+            text-align: center;
+        }
+
+        .modal {
+            margin: 20px;
+            background-color: rgb(247, 226, 244);
+        }
+        #text{
+            text-align:center;
+        }
+    </style>
+
+</head>
+<!-- 공통적인 부분 -->
+
+<body>
+    <header class="header">
+        <a href="home.html"><img src="image/home.png" width="30" height="30" alt="home"></a>
+        <nav>
+            <ul>
+                <li><a href="project.html">Home/Project</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="nav">
+
+    </nav>
+    <!-- 수정, 추가한 부분 -->
+    <section class="section">
+        <table>
+            <tr>
+                <td rowspan="9"><img src="image/travel/travel1.jpg" id="img" width="300px" height="300px"></td>
+                <td><span id="privacy">이름</span></td>
+                <td>조성빈</td>
+            </tr>
+            <tr>
+                <td><span id="privacy">전화번호</span></td>
+                <td>010-5163-5523</td>
+            </tr>
+            <tr>
+                <td><span id="privacy">이메일</span></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;sx0a0er12345@gmail.com</td>
+            </tr>
+            <tr>
+                <td><span id="privacy">생년월일</span></td>
+                <td>2000.11.26</td>
+            </tr>
+            <tr>
+                <td><span id="privacy">학교</span></td>
+                <td>한림대학교</td>
+            </tr>
+            <tr>
+                <td><span id="privacy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전공/부전공</span></td>
+                <td>빅데이터 / 컨턴츠IT</td>
+            </tr>
+            <tr>
+                <td><span id="privacy">거주지</span></td>
+                <td>경기도 하남</td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#hobby"
+                        rel="modal:open"><img src="image/hobby.png" width="150" height="100"></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#career" rel="modal:open"><img src="image/CARRER.png" width="150"
+                            height="100"></a></td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td><img src="image/left.png" id="left" width="50px" height="30px" onclick="changeBack()">
+                        <img src="image/right.png" id="right" width="50px" height="30px" onclick="changeFront()">
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </section>
+
+    <aside class="aside">
+        <button><img src="image/top.png" width="30px" height="30px" alt="위로가는버튼" onclick="moveToTop()"></button>
+    </aside>
+
+    <footer class="footer">
+        <span id="email">sx0a0er12345@gmail.com</span>
+    </footer>
+    <!-- 버튼 눌렀을때 모달창 -->
+    <div id="hobby" class="modal">
+        <td><img src="image/hobby/야구.png" width="450px" height="300px" id="img2"></td>
+        <td><img src="image/left.png" id="left2" width="50px" height="30px" onclick="changeBack2()"></td>
+        <td><img src="image/right.png" id="right2" width="50px" height="30px" onclick="changeFront2()"></td>
+        <br><br>
+        <hr>
+        <hr>
+        <span id="text">
+            스포츠 관람<br> 야구, 축구, E-Sports 경기장에 직접과서 관람하는 것을 좋아한다.
+        </span>
+    </div>
+    <div id="career" class="modal">
+        <span id="text1">
+            <details>
+            <summary><h3>~2020.01</h3></summary>
+            <p>2019.02 한림대학교 입학</p>
+            <p>2019 과동아리&#40;공부&#41; &#60;C애랑&#62; 활동 ~2022.11</C></p>
+            <p>2019 중앙동아리&#40;배드민턴&#41; &#60;하이클리어&#62; 활동 ~2020.02</p>
+            <p>2019 과동아리&#40;축구&#41; &#60;블레스&#62; 활동 ~2020.02</p>
+            <p>2019 Sport Intramural League &#40;축구&#41; 참가</p>
+            <p>2019 SW융합대학 E-SPORTS &#40;LOL&#41; 대상</p>
+        </details>
+        <details>
+            <summary><h3>~2022.01</h3></summary>
+            <P>2020.02.04~2021.08.14 28사단 GOP 입대-전역</P>
+        </details>   
+        <details>
+            <summary><h3>~2023.01</h3></summary>
+            <p>2022 1학기 학기우등</p>
+            <p>2022 중앙동아리&#40;볼링&#41; &#60;공굴리기&#62; 활동</p>
+            <p>2022 SW융합대학 E-SPORTS &#40;LOL&#41; 대상</p>
+            <p>강원VR·AR제작거점센터 메타버스 교육(22.08.22-22.09.30)</p>
+            <p>2022 SOFT WEEK&#40;5회&#41; 참가</p>
+            <p>MOS Office 2016 자격증 취득(22.10.31)</p>
+            <p>MOS PowerPoint 2016 자격증 취득(22.12.04)</p>
+        </details>     
+        </span>
+    </div>
+</body>
+
+</html>

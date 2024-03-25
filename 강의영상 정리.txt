@@ -1,0 +1,84 @@
+di는 종속적 주입 / input ->process(처리) ->출력
+
+A a = new A();
+B b = new B();
+
+b.setA(a) -메소드로 파라미터값으로 넣어서 객체 생성 - setter
+
+B b = new B(a) ->constructor injection
+
+
+스프림 프레임워크 형식 - 자바 POJO di, xml, 에너테이션 // AOP구현의 3가지 방법
+
+스프링 = 자바 = 객체지향적, 초기화 생성(xml,에너테이션)
+
+applicationcontext 생성자 만드는 4가지 ClassPathXmlApplicationcontext
+FileSystemXmlApplicationContext
+XmlWeb a c
+annotation config a c
+
+bean
+class ->package name
+property -> name,value
+constructio-arg name: 
+xml을 통해서 문서를 읽어서 main을 부르고 main에서 수행
+
+자바컴파일러는 메인을 먼저 읽음/ 메인에서 읽혀지는 xml파일을 통해서 객체가 생성되는 과정을 거침
+
+AOP
+
+요구사항 - 사용자 관점, 관리자 관점, 개발자 관점
+유지보수가 중요함
+ 
+----------------------
+AOP - 관점을 어디다가 두고 설계?
+ 
+Cross-cutting(여러객체에서 공통으로 적용되는 공통관심사항) 보안, 트랜잭션,기타..
+Core Concern(주요 업무 처리만 수행하는 핵심관심사항) 서비스 종류
+
+OOP에서는 여러 모듈에서 적용하는데 중복된 코드를 양산하는 한계가 존재 ->AOP등장 / 공통 모듈을 손쉽게 적용가능
+
+AOP
+Aspect
+객제지향 개념 -> 상속 애플리케이션을 통해 사용되는 동일한 기반 클래스라는 깨지기 쉬운 객체 계층 구조를 사용하게됌
+/  위임 위임객체로의 복잡한 호출이 필요할 수 있기 때문에 다루기 어려움
+Aspect-oriented
+aop를 사용해서 공통된 기능을 정의함
+공통업무와 주요업무가 같이 있을 때 두가지를 분리해서 공통업무에 주요업무만 넣으면 바로 사용할 수 있게 된다.
+
+aop용어
+
+advice : aspect의 주요업무를 advice라고 한다.
+어느 시점에 어떤 공통관심기능을 적용할지 정의하는 것
+before advice / after returning advice,after throwing advice(예외처리),around advice(전체 사용)
+주요 업무 전에 처리하는 보조 업무
+인터페이스 MethodInterceptor를 override를 해서 advice사용
+around advice는 Invoke
+before advice는 before
+after returning advice는 afterReturning
+after throwing advice는 afterThrowing
+
+Joinpoint는 advice가 적용할 수많은 기회를 가지고 있는데 기회이다. aspect가 적용될 수 있는 지점
+대부분 메소드 ,발생되는 예외, 변경하려는 필드
+
+Pointcut 공통 관심 사항이 적용될 Joinpoint 적용
+하나의 aspect는 모든 joinpoint들에 대해서 advice수행 불가능하다
+적용되어야 하는 advice의 하나 이상의 jointpoint와 일치함
+NameMatchMethodPointcutAdvisor를 이용해서 사용가능
+
+Aspect는 advice와 pointcut을 통합하는 것
+
+target : advice가 수행될 객체 의미함
+aop 사용 안하면 해당 객체는 주요 로직과 cross-cutting에 대한 로직 모두를 포함해야함
+aop 사용하면 대상 객체는 주요 관심사에만 초점을 두고 적용할 adcice에 대해서 모르는 채로 있음
+
+proxy
+target 객체에 advice를 적용한 후에 생성되는 객체이다.
+newProxyInstance를 통해서 Proxy클래스를 설정한다.파라미터는 실제작용클래스(target),인터페이스, 핸들러가 있다.
+InvocationHandler()를 불러와서 작업
+
+Weaving : aspect를 적용하는 과정 / 어떤 advice를 어떤 pointcut에 적용시킬 것인지에 대한 설정
+컴파일 , 클래스 로드 시점, 실행 시점에서 발생 가능
+
+
+

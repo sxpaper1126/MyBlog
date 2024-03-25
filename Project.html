@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sungbin's Blog</title>
+    <script>
+        let moveToTop = function () {
+            document.body.scrollIntoView({ behavior: "smooth" });
+        };
+    </script>
+    <style>
+        ul {
+            text-align: center;
+            list-style-type: none;
+        }
+
+        ul li {
+            display: inline-block;
+            margin-right: 30px;
+
+        }
+
+        li a {
+            color: #6A75CA;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+        }
+
+        li a:hover {
+            background-color: #99a2e9;
+            border-radius: 5px;
+            padding: 5px;
+            color: #2d3b9f;
+        }
+
+        button {
+            position: fixed;
+            bottom: 100px;
+            right: 10px;
+            border-style: none;
+            background-color: none;
+        }
+
+        #first {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+    <style>
+        html,
+        body {
+            margin: 30;
+            padding: 0;
+            height: 100%;
+        }
+
+        .header {
+            width: 100%;
+            height: 15%;
+            background: white;
+        }
+
+        .nav {
+            width: 10%;
+            height: 70%;
+            float: left;
+            background: white;
+
+        }
+
+        .section {
+            width: 80%;
+            height: 130%;
+            float: left;
+            background: #e4eaf6;
+        }
+
+        .aside {
+            width: 10%;
+            height: 70%;
+            float: right;
+            background: white;
+        }
+
+        .footer {
+            width: 100%;
+            height: 10%;
+            clear: both;
+            background: rgb(222, 222, 222);
+            text-align: center;
+            position: relative;
+        }
+
+        #first {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="home.html"><img src="image/home.png" width="30" height="30" alt="home"></a>
+        <nav>
+            <ul>
+                <li><a href="project.html">Home/Project</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="nav">
+
+    </nav>
+
+    <section class="section">
+
+        <a href="blog.html"><img src="image/blog screenshot.png" width="200px" height="200px" id="first"></a><br>
+        <a href="blog.html" id="first">1. 블로그 프로젝트</a>
+
+    </section>
+
+    <aside class="aside">
+        <button><img src="image/top.png" width="30px" height="30px" alt="위로가는버튼" onclick="moveToTop()"></button>
+    </aside>
+
+    <footer class="footer">
+        <span id="email">sx0a0er12345@gmail.com</span>
+    </footer>
+</body>
+
+</html>
